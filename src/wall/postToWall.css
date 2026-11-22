@@ -1,0 +1,47 @@
+/* PostToWall: uses the shared tokens only, so it follows the design system. */
+.ptw {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 24px 0;
+}
+.ptw-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.ptw-row { display: flex; gap: 8px; }
+.ptw-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 16px; /* no iOS zoom on focus */
+}
+.ptw-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ptw-button {
+  flex: none;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  cursor: pointer;
+}
+.ptw-button:disabled { opacity: 0.6; cursor: progress; }
+.ptw-button:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.ptw-hint, .ptw-error { margin: 8px 0 0; font-size: 0.875rem; }
+.ptw-hint { color: var(--muted); }
+.ptw-error { color: var(--text); }
+.ptw-error::before { content: '⚠︎ '; color: var(--accent); }
+.ptw-done { margin: 0; }
+.ptw-done span { color: var(--accent); }
