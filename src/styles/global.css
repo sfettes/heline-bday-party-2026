@@ -1,18 +1,106 @@
-/* Skeleton tokens only. Agent D owns the real design system (night-sky editorial). */
+/*
+ * Sinners design tokens: "night-sky editorial".
+ * Deep ink ground, warm off-white type, hairline gold rules, one accent per sin
+ * (applied inline from SINS[].accent via --sin). The wall view shares these tokens;
+ * keep the original names (--bg, --surface, --text, --muted, --line, --accent,
+ * --font-display, --font-body) stable.
+ */
 :root {
-  --bg: #0d1020;
-  --surface: #161a30;
-  --text: #f3ece0;
-  --muted: #a9a6b8;
-  --line: #2a2f4a;
+  --bg: #0a0c16;
+  --bg-raised: #0f1220;
+  --surface: #131628;
+  --text: #f2e9da;
+  --muted: #a39dad;
+  --faint: #6e6a7c;
+  --line: #262a40;
+  --line-strong: #3b3e58;
   --accent: #e8c468;
-  --font-display: Georgia, 'Times New Roman', serif;
-  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --accent-ink: #191306;
+  /* Likert ends: moonlit silver for "disagree", candle gold for "agree". */
+  --disagree: #9fb0d8;
+  --agree: #e8c468;
+  --neutral: #6e6a7c;
+
+  --font-display: 'Cormorant Garamond', 'Cormorant', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --gutter: 16px;
+  --measure: 36rem;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 260ms;
+
   color-scheme: dark;
 }
-* { box-sizing: border-box; }
-html, body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); }
-main { max-width: 34rem; margin: 0 auto; padding: 24px 16px 64px; }
-h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
-a { color: var(--accent); }
-button { font: inherit; }
+@media (min-width: 600px) {
+  :root { --gutter: 28px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--bg);
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+#app { position: relative; isolation: isolate; min-height: 100vh; min-height: 100dvh; }
+
+main {
+  position: relative;
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 20px var(--gutter) 72px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  margin: 0;
+  text-wrap: balance;
+}
+p { margin: 0; text-wrap: pretty; }
+ul, ol { margin: 0; padding: 0; }
+a { color: var(--accent); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+button { font: inherit; color: inherit; }
+svg { flex-shrink: 0; }
+img, canvas { max-width: 100%; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+[tabindex='-1']:focus { outline: none; }
+
+::selection { background: color-mix(in srgb, var(--accent) 35%, transparent); }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
