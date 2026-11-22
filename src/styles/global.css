@@ -1,0 +1,18 @@
+/* Skeleton tokens only. Agent D owns the real design system (night-sky editorial). */
+:root {
+  --bg: #0d1020;
+  --surface: #161a30;
+  --text: #f3ece0;
+  --muted: #a9a6b8;
+  --line: #2a2f4a;
+  --accent: #e8c468;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); }
+main { max-width: 34rem; margin: 0 auto; padding: 24px 16px 64px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
+a { color: var(--accent); }
+button { font: inherit; }
