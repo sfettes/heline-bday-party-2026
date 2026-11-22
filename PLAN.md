@@ -90,12 +90,20 @@ Work runs in autonomous Claude sessions. You review only at the gates below. Bet
 ## 7. Status
 
 - [x] Interview complete (2026-11-22)
-- [x] Phase 0: scaffold (Vite + Preact + TS), content contracts, scoring and session engine with tests, router, skeleton screens, Pages workflow, CLAUDE.md, content brief
-- [x] Firebase project `heline-bday-quiz`: Firestore created, rules published from the console (config in `src/wall/firebaseConfig.ts`)
-- [ ] GitHub repo `sfettes/heline-bday-party-2026` exists, but the token lacks Contents/Pages/Workflows write, so it isn't pushed yet. Pages URL will be https://sfettes.github.io/heline-bday-party-2026/
-- [ ] Phase 1: agents A–E (started 2026-11-22, each on its own git worktree branch)
-- [ ] Phase 2: blind item check, simulated respondents, mobile/a11y pass
-- [ ] G1 → G2 → G3 → freeze
+- [x] Phase 0: foundation (scaffold, content contracts, engine and tests, router, CI, CLAUDE.md, content brief)
+- [x] Infra: Firebase `heline-bday-quiz` (Firestore + rules published from the console); GitHub `sfettes/heline-bday-party-2026` (host pushes over SSH; Claude is denied `git push` via `.claude/settings.json`)
+- [x] Phase 1 done, on branches waiting for PRs:
+  - `content/statements`: 63 statements + tiebreakers
+  - `content/figures`: 21 figure sets
+  - `content/results`: write-ups, names, contradictions, growth, compat, birth order, party copy
+  - `wall/party-wall`: Firestore client, live wall, QR page, PostToWall
+  - `ui/design`: design system and all screens; includes `wall/party-wall` plus the PostToWall mount, so merge it after the wall PR
+- [x] Phase 2 (partial):
+  - Blind item check: sin 63/63, direction 63/63, placement 61/63. 7 statements sharpened.
+  - Simulated respondents: in the engine tests.
+  - Full integration passes test, `check:content` and build. Headless 390px walkthrough reached a result with no horizontal scroll and no console errors; wall verified against live Firestore (`test-smoke`).
+- [ ] G1: content review. G2: playable build on a real phone. G3: party dry-run. Then freeze.
+- Known: the headless browser lacks an emoji font, so check sin emoji on real phones and the TV. 9 test docs sit under party `test-smoke` (delete from the console if wanted).
 
 ## 8. Open inputs from the host
 - Party title is "Sinners" for now (it can change).
