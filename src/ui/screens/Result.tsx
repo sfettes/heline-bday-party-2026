@@ -10,6 +10,7 @@ import { absoluteUrl, copyText, prettyUrl } from '../lib/links'
 import { loadMyScores, type Strengths } from '../lib/myScores'
 import { canvasToBlob, drawShareCard, shareOrDownload } from '../lib/shareCard'
 import { NotFound } from './NotFound'
+import { PostToWall } from '../../wall/PostToWall'
 
 const NUMERALS: Record<Placement, string> = { sun: 'I', moon: 'II', rising: 'III' }
 
@@ -235,6 +236,7 @@ function Actions({ code, r, title, mine, isMine }: { code: string; r: ResultCode
         {!isMine && !mine && <a class="btn" href={href.quiz()}>Take the quiz</a>}
       </div>
       <p class="actions__status" role="status" aria-live="polite">{status}</p>
+      {isMine && <PostToWall code={code} />}
     </section>
   )
 }
