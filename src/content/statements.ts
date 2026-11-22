@@ -23,7 +23,7 @@ const CELLS: Record<Placement, Record<SinId, [Row, Row, Row]>> = {
     ],
     lust: [
       ["I hold eye contact a beat too long, and I know exactly what I'm doing."],
-      ['At parties, I make a point of charming everyone, one by one.'],
+      ["At parties, I'll flirt a little with basically everyone, just to keep the energy up."],
       ["I'm the one keeping the group chat flirty and the DMs busy."],
     ],
     envy: [
@@ -34,7 +34,7 @@ const CELLS: Record<Placement, Record<SinId, [Row, Row, Row]>> = {
     wrath: [
       ['I heckle the TV during hockey, Question Period and the evening news.'],
       ["Stuck behind the ION on King Street, I'm the one honking and yelling at the windshield."],
-      ["If someone's rude to a server, I'm the one who says something. Loudly."],
+      ["I've snapped at slow walkers, slow drivers and slow Wi-Fi, sometimes all in one day."],
     ],
     gluttony: [
       ["I always order 'a few things for the table' and then a dessert for myself."],
@@ -50,7 +50,7 @@ const CELLS: Record<Placement, Record<SinId, [Row, Row, Row]>> = {
   moon: {
     pride: [
       ["Secretly, I need people to see that I'm the best at what I do."],
-      ['Being corrected in front of people haunts me for days.'],
+      ['Secretly, being corrected in front of people bruises my ego for days.'],
       ["Deep down, I think most people just aren't operating at my level."],
     ],
     greed: [
@@ -70,13 +70,13 @@ const CELLS: Record<Placement, Record<SinId, [Row, Row, Row]>> = {
     ],
     wrath: [
       ['Like Nathan Fielder, I rehearse arguments in my head, and in my version I destroy them.'],
-      ["I hold grudges like they're family heirlooms."],
-      ['When someone wrongs me, I honestly forget about it by the next day.', true],
+      ["Secretly, I keep my grudges like family heirlooms: polished, labelled, never thrown out."],
+      ["Deep down, when someone wrongs me, I've honestly let it go by the next day.", true],
     ],
     gluttony: [
       ["Deep down, 'just one more' (bite, drink, episode) is my life motto."],
       ['My secret fear at any party is the snacks running out early.'],
-      ["Like Maomao, I'd secretly taste anything once, even if it might be poison."],
+      ['Like Maomao sampling poisons, deep down I want to taste everything, then go back for seconds.'],
     ],
     sloth: [
       ["When life gets busy, I quietly wish I could hibernate until it's over."],
@@ -102,7 +102,7 @@ const CELLS: Record<Placement, Record<SinId, [Row, Row, Row]>> = {
     ],
     envy: [
       ["Friends say I go quiet whenever someone else's life is going great."],
-      ['People say my smile at their good news looks a bit like the one from Smile.'],
+      ["When I congratulate people, they say my smile looks a bit forced. Smile-movie forced."],
       ["People read me as someone who never compares their life to anyone else's.", true],
     ],
     wrath: [
