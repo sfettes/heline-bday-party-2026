@@ -91,8 +91,9 @@ Work runs in autonomous Claude sessions. You review only at the gates below. Bet
 
 - [x] Interview complete (2026-11-22)
 - [x] Phase 0: scaffold (Vite + Preact + TS), content contracts, scoring and session engine with tests, router, skeleton screens, Pages workflow, CLAUDE.md, content brief
-- [ ] Infra: GitHub repo + Pages live; Firebase project + Firestore rules deployed
-- [ ] Phase 1: agents A–E
+- [x] Firebase project `heline-bday-quiz`: Firestore created, rules published from the console (config in `src/wall/firebaseConfig.ts`)
+- [ ] GitHub repo `sfettes/heline-bday-party-2026` exists, but the token lacks Contents/Pages/Workflows write, so it isn't pushed yet. Pages URL will be https://sfettes.github.io/heline-bday-party-2026/
+- [ ] Phase 1: agents A–E (started 2026-11-22, each on its own git worktree branch)
 - [ ] Phase 2: blind item check, simulated respondents, mobile/a11y pass
 - [ ] G1 → G2 → G3 → freeze
 

@@ -25,3 +25,7 @@ Mobile-first birthday party quiz. You get a ☀️ Sun, 🌙 Moon and ⬆️ Ris
 - Browser storage access must stay wrapped in try/catch (`src/storage.ts`).
 - Design: night-sky editorial. No UI kits, no generic gradients-and-emoji "AI" look. Must work at 360px wide with a 16px gutter and no horizontal scroll.
 - Commit with clear messages. CI deploys `main` to GitHub Pages automatically.
+
+## Infra
+- Repo: `sfettes/heline-bday-party-2026`. Live at https://sfettes.github.io/heline-bday-party-2026/ (Pages via Actions).
+- Firebase project `heline-bday-quiz` (Firestore, `northamerica-northeast2`). Rules are in `firestore.rules`; the host publishes them by pasting into the console (no CLI login).
