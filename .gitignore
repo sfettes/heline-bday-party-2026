@@ -27,3 +27,6 @@ dist-ssr
 *.pdf
 .firebase/
 *-debug.log
+
+# Claude Code local state (agent worktrees, settings)
+.claude/
