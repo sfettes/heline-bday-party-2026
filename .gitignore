@@ -28,5 +28,6 @@ dist-ssr
 .firebase/
 *-debug.log
 
-# Claude Code local state (agent worktrees, settings)
-.claude/
+# Claude Code local state (agent worktrees, personal settings); .claude/settings.json is shared
+.claude/worktrees/
+.claude/settings.local.json
