@@ -140,8 +140,10 @@ export function Quiz() {
       <section key={key} class={`quiz__step${busy ? ' is-leaving' : ''}`}>
         {step.kind === 'statement' && (
           <>
-            <p class="kicker quiz__kicker">How true is this of you?</p>
-            <h1 id="q-prompt" ref={headingRef} tabIndex={-1} class="quiz__statement">{step.statement.text}</h1>
+            <div class="quiz__prompt">
+              <p class="kicker quiz__kicker">How true is this of you?</p>
+              <h1 id="q-prompt" ref={headingRef} tabIndex={-1} class="quiz__statement">{step.statement.text}</h1>
+            </div>
             <Likert
               key={step.statement.id}
               labelledBy="q-prompt"
@@ -239,7 +241,7 @@ function NameStep({ headingRef, onDone }: { headingRef: RefObject<HTMLHeadingEle
           maxLength={NAME_MAX}
           value={name}
           onInput={(e) => setName((e.target as HTMLInputElement).value)}
-          placeholder="e.g. Heline"
+          placeholder="Your name"
         />
         <span class="field__help">It's how you'll appear on the party wall. Nothing else is shared.</span>
       </label>

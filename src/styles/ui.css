@@ -301,7 +301,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 36px 0 24px;
+  padding: 28px 0 9vh;
   animation: stepIn 380ms var(--ease) both;
   transition: opacity 220ms var(--ease), transform 220ms var(--ease);
 }
@@ -314,15 +314,14 @@
   .quiz__step.is-leaving { transform: none; }
 }
 .quiz__kicker { margin-bottom: 16px; }
+/* Reserve ~4 lines so the scale doesn't jump between statements; text sits on the scale. */
+.quiz__prompt { min-height: calc(4 * 1.12 * clamp(1.85rem, 7.4vw, 2.6rem) + 2.5rem); display: flex; flex-direction: column; justify-content: flex-end; }
 .quiz__statement {
   font-size: clamp(1.85rem, 7.4vw, 2.6rem);
   line-height: 1.12;
   font-weight: 500;
-  min-height: 4.5em; /* reserve ~4 lines so the scale doesn't jump between statements */
-  display: flex;
-  align-items: flex-end;
 }
-.quiz__statement--sm { font-size: clamp(1.7rem, 6.4vw, 2.3rem); min-height: 0; }
+.quiz__statement--sm { font-size: clamp(1.7rem, 6.4vw, 2.3rem); }
 .quiz__sub { color: var(--muted); margin-top: 12px; font-size: 0.97rem; }
 .quiz__hint { display: none; margin-top: 22px; text-align: center; font-size: 0.8rem; color: var(--faint); }
 @media (hover: hover) and (pointer: fine) { .quiz__hint { display: block; } }
@@ -383,7 +382,7 @@
 .choices--grid { grid-template-columns: 1fr 1fr; }
 .choice {
   display: grid;
-  grid-template-columns: 2em 1fr;
+  grid-template-columns: 1.4em 1fr;
   align-items: baseline;
   gap: 6px;
   min-height: 56px;
@@ -400,7 +399,7 @@
 .choice:hover { border-color: var(--accent); }
 .choice.is-checked { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
 .choice__mark { font-family: var(--font-display); font-style: italic; font-size: 1.15rem; color: var(--accent); }
-.choices--grid .choice { grid-template-columns: 1.6em 1fr; }
+.choices--grid .choice { grid-template-columns: 1.5em 1fr; }
 
 .namestep { display: flex; flex-direction: column; }
 .namestep__actions { display: grid; justify-items: center; gap: 6px; margin-top: 28px; }
@@ -438,6 +437,8 @@
 
 .contradiction { text-align: center; margin: 48px 0 8px; }
 .contradiction .kicker { justify-content: center; }
+.contradiction__pair { display: flex; justify-content: center; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; margin-top: 8px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; }
+.contradiction__vs { font-style: italic; font-weight: 500; color: var(--faint); }
 .contradiction__quote {
   margin: 16px auto 0;
   max-width: 30rem;

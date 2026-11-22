@@ -59,9 +59,11 @@ function ResultView({ code, r }: { code: string; r: ResultCode }) {
 
       {contradiction && (
         <section class="contradiction" aria-labelledby="contra-h">
-          <p class="kicker" id="contra-h">
-            <span style={{ color: SINS[r.sun].accent }}>{SINS[r.sun].name}</span> Sun,{' '}
-            <span style={{ color: SINS[r.moon].accent }}>{SINS[r.moon].name}</span> Moon · Your central contradiction
+          <p class="kicker" id="contra-h">The central contradiction</p>
+          <p class="contradiction__pair">
+            <span style={{ color: SINS[r.sun].accent }}>{SINS[r.sun].name} Sun</span>
+            <span class="contradiction__vs">against</span>
+            <span style={{ color: SINS[r.moon].accent }}>{SINS[r.moon].name} Moon</span>
           </p>
           <blockquote class="contradiction__quote">{contradiction}</blockquote>
         </section>

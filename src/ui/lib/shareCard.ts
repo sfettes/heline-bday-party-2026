@@ -196,8 +196,8 @@ export async function drawShareCard({ code, placements, title, url }: CardInput)
     glyph(ctx, p, left, y + 50, 76, sin.accent)
     ctx.textAlign = 'left'
     ctx.fillStyle = MUTED
-    ctx.font = `500 26px ${BODY}`
-    spaced(ctx, 6)
+    ctx.font = `500 24px ${BODY}`
+    spaced(ctx, 5)
     ctx.fillText(`${PLACEMENT_META[p].name} · ${PLACEMENT_META[p].tagline}`.toUpperCase(), left + 116, y + 66)
     spaced(ctx, 0)
     ctx.fillStyle = sin.accent
