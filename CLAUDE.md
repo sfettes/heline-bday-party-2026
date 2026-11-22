@@ -24,7 +24,8 @@ Mobile-first birthday party quiz. You get a ☀️ Sun, 🌙 Moon and ⬆️ Ris
 - Result codes look like `PEW-y` (Sun, Moon, Rising letters, plus optional birth order). They are stable public URLs, so don't change the alphabet.
 - Browser storage access must stay wrapped in try/catch (`src/storage.ts`).
 - Design: night-sky editorial. No UI kits, no generic gradients-and-emoji "AI" look. Must work at 360px wide with a 16px gutter and no horizontal scroll.
-- Commit with clear messages. CI deploys `main` to GitHub Pages automatically.
+- **Never commit to `main`.** Work on a feature branch (`content/...`, `ui/...`, `wall/...`, `fix/...`), push it, and open a PR into `main` with `gh pr create`. CI runs tests and build on PRs; merging to `main` deploys to Pages.
+- The host pushes to `main` personally (their token is push-restricted). Don't push to `main` or merge PRs unless the host asks.
 
 ## Infra
 - Repo: `sfettes/heline-bday-party-2026`. Live at https://sfettes.github.io/heline-bday-party-2026/ (Pages via Actions).
