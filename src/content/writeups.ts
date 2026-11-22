@@ -1,13 +1,181 @@
-import { todo } from './placeholder'
-import { PLACEMENTS, SIN_IDS, type PlacementWriteup } from './types'
+import type { PlacementWriteup } from './types'
 
-// PLACEHOLDER — Agent B replaces.
-export const WRITEUPS: PlacementWriteup[] = PLACEMENTS.flatMap((placement) =>
-  SIN_IDS.map((sin) => ({
-    placement, sin,
-    headline: todo(`${placement} ${sin} headline`),
-    body: todo(`${placement} ${sin} body`),
-    light: [todo('strength'), todo('strength')],
-    shadow: [todo('pitfall'), todo('pitfall')],
-  })),
-)
+/**
+ * 21 placement write-ups (sin × placement).
+ * Sun = what you do · Moon = what you secretly want/fear · Rising = how others read you.
+ */
+export const WRITEUPS: PlacementWriteup[] = [
+  // ☀️ SUN: what you do
+  {
+    placement: 'sun',
+    sin: 'pride',
+    headline: "You walk in like the main character because, frankly, you are.",
+    body: "You lead, you decide, you hold the clipboard nobody asked you to hold. Group trips, group dinners, group projects: somehow you end up running them, and somehow they go better. You set the bar high and then clear it in style. It's Logan Roy energy, minus the screaming. Mostly.",
+    light: ["Natural leader: things actually happen when you're in charge", "Gets it done while everyone else is still naming the group chat", "Hypes people up (once they've earned it)"],
+    shadow: ["Would rather get lost than ask for directions", "Treats 'good enough' as a personal insult", "Finds it hard to be a passenger, literally and otherwise"],
+  },
+  {
+    placement: 'sun',
+    sin: 'greed',
+    headline: "You don't have hobbies. You have portfolios.",
+    body: "You collect: points, skills, side hustles, contacts, receipts (literal and emotional). You're always quietly running the numbers, and you're usually right. Your Costco membership pays for itself and you have the spreadsheet to prove it. You know the value of everything; the trick is remembering that the price isn't always the point.",
+    light: ["Resourceful to a slightly alarming degree", "Plans three moves ahead", "Knows the best deal in K-W for literally anything"],
+    shadow: ["Nothing ever quite counts as 'enough' yet", "Says yes to everything in case it turns out valuable", "Has 40 tabs open, all 'for later'"],
+  },
+  {
+    placement: 'sun',
+    sin: 'lust',
+    headline: "You don't enter a room. You happen to it.",
+    body: "You run on connection: the flirty banter, the deep 2 a.m. talk, the text back in four seconds flat. People feel seen around you, which is why they tell you things they've never told anyone. You chase the spark, the chemistry, the moment, and Twilight-level intensity is, for you, a pretty normal Tuesday.",
+    light: ["Turns strangers into old friends in one conversation", "Brings the warmth (and the gossip)", "Emotionally fluent and unafraid to show it"],
+    shadow: ["Can mistake intensity for intimacy", "Gets restless when the spark settles into a routine", "Takes being left on read very personally"],
+  },
+  {
+    placement: 'sun',
+    sin: 'envy',
+    headline: "You know exactly what everyone else is up to. For research.",
+    body: "You notice everything: who got promoted, who got engaged, whose apartment has better light. Then you turn it into fuel, because you look at someone else's life and think, 'I could do that, but better.' Your curiosity is a superpower, and scrolling through other people's lives is basically your cardio.",
+    light: ["A sharp observer of people and trends", "Turns comparison into motivation", "Spots the next big thing before it's a thing"],
+    shadow: ["Measures your chapter 3 against someone else's chapter 20", "Congratulates people through slightly gritted teeth", "Forgets to count what you already have"],
+  },
+  {
+    placement: 'sun',
+    sin: 'wrath',
+    headline: "You don't start fights. You finish them. (Okay, sometimes you start them.)",
+    body: "You act fast, say it plainly and refuse to let things slide, whether it's real injustice or someone cutting the line at the ION platform. Your energy gets things moving, and everyone wants you in their corner. Like Caesar at the barricade, one word from you and everyone knows exactly where things stand: 'No.'",
+    light: ["Brave when it actually counts", "Honest to a fault (emphasis on fault)", "Turns frustration into action, immediately"],
+    shadow: ["Replies before reading the whole message", "Holds grudges with impressive cardio", "Treats minor inconveniences like declarations of war"],
+  },
+  {
+    placement: 'sun',
+    sin: 'gluttony',
+    headline: "More is more, and you're having seconds.",
+    body: "You're the one who orders for the table, says yes to one more round, and somehow knows a guy at Oktoberfest. Food, travel, music, people: you want all of it, and you want it tonight. Life is a tasting menu and you didn't come here to skip courses.",
+    light: ["Turns any night into a story", "A generous host and an enthusiastic guest", "Throws yourself fully into whatever's happening"],
+    shadow: ["'Just one more' is a lie you tell often", "Plans tomorrow's fun before finishing today's", "Has a complicated relationship with the word 'enough'"],
+  },
+  {
+    placement: 'sun',
+    sin: 'sloth',
+    headline: "You're not lazy. You're in energy-saving mode.",
+    body: "You move at your own pace, and honestly, it's a lovely pace. While everyone else panics, you stay calm, possibly horizontal and occasionally right. You avoid drama mainly by never quite getting around to it. A sunny afternoon in Waterloo Park with nowhere to be is your natural habitat.",
+    light: ["Unshakeable calm in a crisis", "Excellent at resting (genuinely a skill)", "Never adds stress to a room"],
+    shadow: ["'I'll do it tomorrow' is a whole lifestyle", "Dodges small conflicts until they become big ones", "Has an unread-messages count that frightens people"],
+  },
+
+  // 🌙 MOON: what you secretly want or fear
+  {
+    placement: 'moon',
+    sin: 'pride',
+    headline: "Deep down, you don't just want to be liked. You want to be respected.",
+    body: "Underneath it all is a quiet need to matter: to be good at things, to be taken seriously, to never look foolish. Criticism stings longer than you let on, and you replay it in the shower like Nathan Fielder rehearsing a conversation that already happened. You don't need a crown. You just need to know you deserve one.",
+    light: ["Holds yourself to genuinely high standards", "Quietly, stubbornly determined", "A strong sense of self when it's working"],
+    shadow: ["A real fear of failing in public", "Struggles to say 'I was wrong', even in your own head", "Over-rehearses every vulnerable moment"],
+  },
+  {
+    placement: 'moon',
+    sin: 'greed',
+    headline: "Secretly, you just want to feel safe, with backups of the backups.",
+    body: "What really drives you is security: money in the bank, a plan B, a pantry that could survive the Hunger Games. Scarcity scares you more than you'd admit, so you hold on to things, people and chances a little too tightly. Deep down, 'enough' keeps moving a few steps ahead of you.",
+    light: ["Prepared for anything", "Loyal and fiercely protective of your people", "Good at building things that last"],
+    shadow: ["Fear of losing what you've worked for", "Can't fully relax until everything's locked down", "Quietly keeps score"],
+  },
+  {
+    placement: 'moon',
+    sin: 'lust',
+    headline: "What you really want is to be chosen.",
+    body: "Underneath the composure is a heart that wants to be wanted: closeness, connection, being someone's favourite person. You crave being fully seen, and a lukewarm reply can ruin a whole afternoon. For real intimacy, you'd cross a desert planet on foot, sandworms and all.",
+    light: ["A huge capacity for love", "Deeply loyal once you're connected", "Emotionally brave"],
+    shadow: ["Fear of being forgotten or replaced", "Reads entire novels into a 'k.'", "Can lose yourself inside someone else's world"],
+  },
+  {
+    placement: 'moon',
+    sin: 'envy',
+    headline: "Secretly, you're always checking the other lanes.",
+    body: "Deep down there's a little voice asking whether someone else got the better life, the better partner, the better seat on the train. You want to become more, and comparison is how you measure the distance. Like the heroine of The Substance, you sometimes wonder about a shinier 'other you'. Spoiler: she's already here.",
+    light: ["Genuinely driven to grow", "Knows exactly what you want (once you see someone else with it)", "Easily inspired by other people"],
+    shadow: ["Fear of falling behind", "Discounts your own wins the moment they happen", "Doom-scrolls other people's highlight reels"],
+  },
+  {
+    placement: 'moon',
+    sin: 'wrath',
+    headline: "Under the calm, there's a fire that wants things to be fair.",
+    body: "Secretly you carry a strong sense of right and wrong, and you remember every single time it was violated. You need loyalty and honesty, and betrayal is the one thing you can't let go (you can list examples, chronologically). It's more passion than rage. It just needs somewhere to go.",
+    light: ["Fiercely protective of the people you love", "A strong moral compass", "Deep reserves of passion and drive"],
+    shadow: ["Fear of being disrespected or betrayed", "Simmers instead of saying it", "Keeps receipts, in triplicate"],
+  },
+  {
+    placement: 'moon',
+    sin: 'gluttony',
+    headline: "Secretly, you're terrified of missing out.",
+    body: "What you want, deep down, is more: more fun, more flavour, more life before the credits roll. A boring weekend genuinely frightens you, so you'd rather overbook than sit in silence. For you, FOMO isn't a feeling. It's a load-bearing wall.",
+    light: ["Hungry for life in the best way", "Open to almost anything", "Finds joy in the small stuff"],
+    shadow: ["Fear of boredom and stillness", "Fills every gap so you don't have to feel things", "Physically cannot leave a party first"],
+  },
+  {
+    placement: 'moon',
+    sin: 'sloth',
+    headline: "Secretly, all you want is peace and a really good blanket.",
+    body: "Deep down you crave calm: no drama, no pressure, nobody needing anything from you for at least a week. Conflict drains you, so you'd rather smooth it over or skip it entirely. You're not unmotivated; you're waiting for something actually worth getting off the couch for. A Severance-style deal where some other version of you does all the work? Tempting.",
+    light: ["Accepting and easy to be around", "Very hard to rattle", "A safe, soft place for other people to land"],
+    shadow: ["Fear of being overwhelmed", "Avoids hard conversations for as long as humanly possible", "Sometimes mistakes numbness for peace"],
+  },
+
+  // ⬆️ RISING: how others read you
+  {
+    placement: 'rising',
+    sin: 'pride',
+    headline: "People clock you as the person in charge before you've said a word.",
+    body: "You walk in like you own the building, or at least have strong opinions about its architecture. Strangers assume you're confident, accomplished and a little intimidating, and they're not entirely wrong. First impression: Roy-family-boardroom energy, with noticeably better follow-through.",
+    light: ["Instant credibility", "People trust you to take the lead", "Looks effortlessly put-together"],
+    shadow: ["Can read as unapproachable", "People assume you never need help", "Hard to be seen as the silly one"],
+  },
+  {
+    placement: 'rising',
+    sin: 'greed',
+    headline: "People assume you know the value of everything in the room.",
+    body: "First impression: sharp, polished, quietly calculating. People suspect you have a five-year plan, a spreadsheet for it and a side hustle you haven't mentioned yet. You read as the one to ask about real estate, the tech scene or where to get the good bread.",
+    light: ["Comes across as capable and competent", "Seems trustworthy with money and logistics", "People want you on their team"],
+    shadow: ["Can read as transactional", "People assume you're always networking", "Hard to seem spontaneous"],
+  },
+  {
+    placement: 'rising',
+    sin: 'lust',
+    headline: "People are drawn to you before they know why.",
+    body: "Your first impression is warmth with a little smoulder. Strangers feel noticed, slightly flustered and weirdly ready to share their life story by the second drink. You give off Edward-in-biology-class intensity, minus the brooding. Mostly.",
+    light: ["Magnetic and approachable at the same time", "Makes people feel special instantly", "A world-class ice-breaker"],
+    shadow: ["People assume you're flirting when you're just being nice", "Gets read as less serious than you are", "Attracts attention you didn't order"],
+  },
+  {
+    placement: 'rising',
+    sin: 'envy',
+    headline: "People get the feeling you're quietly taking notes.",
+    body: "Your first impression is watchful: friendly enough, but definitely reading the room and everyone in it. Strangers assume you're observant, a little mysterious, and possibly judging their shoes (what are those?). You come across like Maomao from The Apothecary Diaries: quiet, sharp and missing absolutely nothing.",
+    light: ["Seems perceptive and smart", "Intriguing rather than an open book", "People find themselves wanting to impress you"],
+    shadow: ["Can read as judgy", "Takes a while to come across as warm", "People assume you're competing with them"],
+  },
+  {
+    placement: 'rising',
+    sin: 'wrath',
+    headline: "People assume you could win a fight. You probably could.",
+    body: "Your first impression is intensity: direct eye contact, decisive opinions and a resting face that says 'try me'. Strangers either feel safer around you or slightly scared, and some feel both. You come across like someone who'd volunteer as tribute and then win.",
+    light: ["People feel protected around you", "Reads as honest and no-nonsense", "Instant authority when things get chaotic"],
+    shadow: ["Can read as intimidating", "People think you're mad when you're just thinking", "Your small talk can feel like a cross-examination"],
+  },
+  {
+    placement: 'rising',
+    sin: 'gluttony',
+    headline: "People assume you're the fun one. They're right.",
+    body: "Your first impression is a party starting: big laugh, bigger plans, possibly holding two drinks. Strangers peg you as up for anything, and five minutes later they've agreed to karaoke. You read like the person who knows the best spot in Uptown Waterloo and will absolutely take everyone there tonight.",
+    light: ["Instantly likeable", "Makes everyone around you relax", "Brings the energy wherever you go"],
+    shadow: ["People don't always take you seriously", "Expected to be 'on' all the time", "Can read as a little impulsive"],
+  },
+  {
+    placement: 'rising',
+    sin: 'sloth',
+    headline: "People assume you're chill. A few think you're asleep.",
+    body: "Your first impression is calm: unhurried, soft-spoken and deeply unbothered. Strangers find it soothing, and some find it mysterious, wondering what's happening behind those half-closed eyes. You carry Uncle Iroh with a cup of tea energy, which is the highest compliment this quiz can give.",
+    light: ["Puts people at ease immediately", "Seems wise and grounded", "Never looks rattled"],
+    shadow: ["Gets underestimated", "Can read as uninterested", "People assume you don't care (you do, quietly)"],
+  },
+]
