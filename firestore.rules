@@ -1,0 +1,27 @@
+rules_version = '2';
+
+// Party wall: guests can add their own result and read results for a party.
+// Nothing can be edited or deleted from the client; everything else is denied.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /parties/{party}/results/{resultId} {
+      allow read: if party.matches('^[a-z0-9-]{1,32}$');
+
+      allow create: if party.matches('^[a-z0-9-]{1,32}$')
+        && request.resource.data.keys().hasOnly(['name', 'code', 'createdAt'])
+        && request.resource.data.keys().hasAll(['name', 'code', 'createdAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 1
+        && request.resource.data.name.size() <= 24
+        && request.resource.data.code is string
+        && request.resource.data.code.matches('^[PGLEWUS]{3}(-[omyx])?$')
+        && request.resource.data.createdAt == request.time;
+
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
